@@ -21,3 +21,23 @@ window.onload = function () {
     animateCounter("count4", 0, 1287, 2000);
     animateCounter("count5", 0, 1287, 2000);
 }
+
+function toggleMenu() {
+    document.querySelector(".nav-links").classList.toggle("active");
+}
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    new Swiper(".mySwiper", {
+        loop: true,          // Infinite loop
+        autoplay: {
+            delay: 4000,     // Slower slide change (4s)
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        speed: 1200,         // Slow down transition speed
+    });
+});
