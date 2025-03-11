@@ -62,6 +62,10 @@ body{
 
 /* Mobile Responsive Styles */
 @media screen and (max-width: 768px) {
+
+     .navbar{
+        padding: 5px 10px;
+    }
     .nav-links {
         display: none;
         flex-direction: column;
