@@ -613,4 +613,57 @@ color: #ccc;
             color: #a82c38;
         }
 
+.subscribe {
+            display: flex;
+            margin: 80px 0;
+
+            align-items: center;
+            text-transform: capitalize;
+            justify-content: center;
+        }
+
+        .subscribe .sub-content {
+            width: 80%;
+
+        }
+
+        .sub-content h1 {
+            font-size: 36px;
+            text-align: center;
+            font-weight: 800;
+            color: #1f6dad;
+
+        }
+
+        .sub-content span {
+            color: #a82c38;
+        }
+
+        .sub-content p {
+            color: #333333;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .sub-content .btn{
+            text-align: center;
+        }
+
+        .sub-content input{
+            padding: 10px;
+            border: 10px soid #ccc;
+        }
+
+        .sub-content button{
+            padding: 10px;
+            background-color: #A82c48;
+            color: white;
+        }
+
+        .sub-content button:hover{
+            background-color: white;
+            border: 2px solid #A82c48;
+            color: #a82c38;
+        }
+
 
