@@ -15,63 +15,77 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-nav {
+/* Navbar styling */
+.navbar {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 10px 20px;
-    position: fixed; /* Makes the navbar stick */
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%; /* Full width */
-    background-color: #fff; /* Change this to your preferred color */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adds shadow for better visibility */
-    z-index: 1000; /* Ensures navbar stays on top */
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
 
-nav .nav-links {
+.nav-links {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 45px;
-    letter-spacing: 2px;
+    list-style: none;
 }
 
-nav .brand-logo img {
-    height: 100px; /* Adjusted to fit better */
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-}
-
-a {
+.nav-links a {
     text-decoration: none;
-    color: var(--prime-color, #000); /* Default black if var not set */
+    color: var(--prime-color, #000);
     font-weight: bold;
     font-size: 14px;
     cursor: pointer;
 }
 
-.navbar button {
-    padding: 10px 25px;
-    background-color: #a82c48; 
-    color: white;
-    border: none;
-    /* border-radius: 5px; */
+.brand-logo img {
+    height: 100px;
+}
+
+/* Hamburger Menu (Hidden by Default) */
+.hamburger {
+    display: none;
+    font-size: 28px;
     cursor: pointer;
 }
 
+body{
+    padding-top: 70px;
+}
 
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
 
+    .nav-links.active {
+        display: flex;
+    }
 
+    .nav-links li {
+        margin: 10px 0;
+    }
 
-body {
-    padding-top: 80px; 
+    .hamburger {
+        display: block;
+    }
 }
 
 
@@ -87,20 +101,22 @@ body {
     padding: 20px;
     background: url(assets/background.jpg);
     background-size: cover;
-    /* Ensures the image covers the entire section */
+ 
     background-position: center;
     /* background-attachment: fixed; */
-    /* Optional: Gives a parallax effect */
+   
     overflow: hidden;
-    /* Prevents scrolling due to oversized images */
+   
 
 }
 
 .home .left {
-    /* align-items: center; */
-    width: 60%;
-    /* margin: 50px; */
-    margin: 70px;
+    
+    width: 45%;
+    
+    margin: 100px;
+    
+    /* border: 2px solid red; */
 }
 .home button{
     background-color: #a82c48;
@@ -122,13 +138,14 @@ body {
     font-size: 40px;
     color: white;
     line-height: 1.2;
-    font-weight: bold;
+    font-weight: 900;
     margin-bottom: 45px;
 /* overflow: hidden; */
 
 }
 
 .home .left p {
+    padding-right: 40px;
     color: #ccc;
     margin: 16px 0;
 }
@@ -443,51 +460,43 @@ p {
 }
 
 
-
-
-#explore-food .text-content h2{ 
-    color: #1f6daf;
-    margin: 100px 0;
-} 
-
-#explore-food .text-content p{
-    color: #555555;
-    font-size: 16px;
-    text-align: center;
-    margin: 20px  0;
-
-
+#explore-food
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
 }
 
-#explore-food .text-content{
-
+#explore-food .wrapper{
+    width: 90%;
 }
 
-#explore-food .food-grid{ 
-display: flex; 
-width: 90%; 
-align-items: center; 
-justify-content: space-between; 
-flex-wrap: wrap; 
-margin: auto; 
-padding: 40px 20px; 
-/* text-align: center;  */
 
+.food-grid{ 
+display: flex;
+
+align-items: center;
+justify-content: space-around;
+flex-wrap: wrap;
+margin: 0;
+padding: 0;
 } 
 
-
-
-
-.food-grid .card{ 
-
-} 
+.card{
+    margin-bottom: 20px;
+}
 
 
 .card img{ 
 border-radius: 20px; 
-width: 200px; 
+width: 250px; 
 
 } 
+
+.card img :hover{
+    transform: scale(1.3);
+}
 
 .card img:hover img{ 
 transform: scale(1.2); 
@@ -500,8 +509,16 @@ color: white;
 display: block; 
 } 
 
+.card .order-btn:hover{
+    background-color: white;
+    color: #a82c48;
+    border: 2px solid #a82c48;
+    cursor: pointer;
+}
+
 .card .card-content *{ 
 margin: 10px 0; 
+/* display: flex; */
 } 
 
 
@@ -526,17 +543,16 @@ font-size: 2rem;
 color: #ccc; 
 } 
 
+.wrapper .text-content h2{
+    font-size: 2rem;
+    color: #1f6daf;
+    margin-bottom: 60px;
+}
 
-#explore-food h2{ 
-color: aqua; 
-font-size: 2rem; 
-} 
+.wrapper .text-content p{
+    text-align: center;
+    /* border: 2px soid red ; */
+    margin-bottom: 60px;
+}
 
 
-
-#explore-food{ 
-margin: 40px 10px; 
-display: flex; 
-align-items: center; 
-justify-content: center; 
-} 
