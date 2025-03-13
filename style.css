@@ -712,4 +712,71 @@ color: #ccc;
         font-weight: 800;
     }
 
+/* Counter Section */
+.counter-container {
+    background-color: var(--prime-color);
+    text-align: center;
+    padding: 60px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 40px;
+    color: white;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.counter-box {
+    flex: 1 1 200px; /* Flex-grow, flex-shrink, and flex-basis */
+    margin: 10px; /* Add margin for spacing */
+}
+
+.counter-box h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.counter-box p {
+    font-size: 1rem;
+    color: #fff;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .counter-container {
+        padding: 40px 10px; /* Reduce padding for smaller screens */
+        gap: 20px; /* Reduce gap between boxes */
+    }
+
+    .counter-box {
+        flex: 1 1 150px; /* Adjust flex-basis for smaller screens */
+    }
+
+    .counter-box h2 {
+        font-size: 28px; /* Reduce font size for smaller screens */
+    }
+
+    .counter-box p {
+        font-size: 0.9rem; /* Reduce font size for smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .counter-container {
+        flex-direction: column; /* Stack counter boxes vertically on mobile */
+        padding: 30px 10px; /* Further reduce padding */
+    }
+
+    .counter-box {
+        flex: 1 1 auto; /* Allow boxes to take full width */
+        margin: 10px 0; /* Adjust margin for vertical stacking */
+    }
+
+    .counter-box h2 {
+        font-size: 24px; /* Further reduce font size for mobile */
+    }
+
+    .counter-box p {
+        font-size: 0.8rem; /* Further reduce font size for mobile */
+    }
+}
 
